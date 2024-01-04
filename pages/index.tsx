@@ -6,22 +6,24 @@ export default function Home() {
 
   useEffect(() => {
     let transports: TransportConfig[] = [{
-      rate_limit: 50,
+      rateLimit: 50,
       weight: 50,
       blacklist: [],
+      id: "QUICKNODE",
       url: 'https://bold-winter-brook.solana-mainnet.quiknode.pro/039710b0695699c8b2849d5903a9735260339476/',
-      enable_smart_disable: false,
-      enable_failover: false,
-      max_retries: 0,
+      enableSmartDisable: false,
+      enableFailover: false,
+      maxRetries: 0,
     },
     {
-      rate_limit: 50,
+      rateLimit: 50,
       weight: 50,
       blacklist: ['getTokenLargestAccounts'],
+      id: "MAINNET_BETA",
       url: 'https://api.mainnet-beta.solana.com',
-      enable_smart_disable: true,
-      enable_failover: true,
-      max_retries: 0,
+      enableSmartDisable: true,
+      enableFailover: true,
+      maxRetries: 0,
     }];
 
     const transportManager = new TransportManager(transports);
